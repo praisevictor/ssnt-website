@@ -1,6 +1,7 @@
 {
     "editor.cursorBlinking": "smooth",
     "editor.cursorSmoothCaretAnimation": "explicit",
-    "editor.cursorStyle": "block",
-    "editor.cursorWidth": 0
+    "editor.cursorStyle": "line",
+    "editor.cursorWidth": 0,
+    "editor.overtypeCursorStyle": "line"
 }
