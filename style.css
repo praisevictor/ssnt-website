@@ -1411,6 +1411,7 @@ img {
     grid-template-columns: 1.1fr 0.9fr;
     gap: 40px;
     align-items: start;
+    min-width: 0;
 }
 
 .register-panel {
@@ -1418,6 +1419,7 @@ img {
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
     background: var(--bg);
+    min-width: 0;
 }
 
 .register-panel h2 {
@@ -1437,11 +1439,13 @@ img {
 .register-form {
     display: grid;
     gap: 18px;
+    min-width: 0;
 }
 
 .form-field {
     display: grid;
     gap: 8px;
+    min-width: 0;
 }
 
 .form-field label {
@@ -1452,6 +1456,8 @@ img {
 
 .form-field input,
 .form-field select {
+    width: 100%;
+    min-width: 0;
     height: 52px;
     padding: 0 18px;
     border: 1px solid var(--border);
