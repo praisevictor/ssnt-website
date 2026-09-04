@@ -1765,6 +1765,42 @@ body.dark-mode .solution-modal-close {
     font-size: 0.82rem;
 }
 
+.login-box {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.login-box .form-field label {
+    color: rgba(255, 255, 255, 0.82);
+}
+
+.login-box .form-field input {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.3);
+    color: #fff;
+}
+
+.login-box .form-field input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.login-box .access-btn {
+    margin-top: 10px;
+}
+
+.login-box .form-status {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.login-box .form-status.error {
+    color: #ffb4a8;
+}
+
+.hidden {
+    display: none !important;
+}
+
 /* =========================
    10. TESTIMONIALS
 ========================== */

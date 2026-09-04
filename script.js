@@ -204,29 +204,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     /* =========================
        7. REGISTRATION FORM
-       (front-end only for now —
-       wire this up to the real
-       backend once it exists)
+       (handled by auth.js, which
+       saves to Supabase — see
+       that file for the submit
+       handler)
     ========================== */
-    const registerForm = document.getElementById("registerForm");
-    const registerStatus = document.getElementById("registerStatus");
-
-    if (registerForm) {
-        registerForm.addEventListener("submit", (event) => {
-            event.preventDefault();
-
-            if (!registerForm.checkValidity()) {
-                registerForm.reportValidity();
-                registerStatus.textContent = "Please fill in every field before registering.";
-                registerStatus.classList.add("error");
-                return;
-            }
-
-            registerStatus.classList.remove("error");
-            registerStatus.textContent =
-                "Thanks — registration isn't connected to a server yet, so nothing was saved. This will submit for real once the backend is wired up.";
-        });
-    }
 
     /* =========================
        8. CURRENT YEAR

@@ -573,9 +573,9 @@
                             <div class="solution-content">
                                 <span class="solution-tag">SEN SOLUTION</span>
                                 <h3>Independent Therapy Audit — Tier 1</h3>
-                                <p>An independent audit of whether a child's current therapy is genuinely working — Tier 1 scope.</p>
+                                <p>An independent audit of whether a child's current therapy is genuinely working — Tier 1 scope (Desk Review).</p>
                                 <div class="solution-footer">
-                                    <strong>₦XX,XXX</strong>
+                                    <strong>₦50,000</strong>
                                     <button class="solution-btn" type="button">Get It Now <span>→</span></button>
                                 </div>
                             </div>
@@ -586,9 +586,9 @@
                             <div class="solution-content">
                                 <span class="solution-tag">SEN SOLUTION</span>
                                 <h3>Independent Therapy Audit — Tier 2</h3>
-                                <p>An independent audit of whether a child's current therapy is genuinely working — Tier 2 scope.</p>
+                                <p>An independent audit of whether a child's current therapy is genuinely working — Tier 2 scope (Desk Review plus one live observed session).</p>
                                 <div class="solution-footer">
-                                    <strong>₦XX,XXX</strong>
+                                    <strong>₦100,000</strong>
                                     <button class="solution-btn" type="button">Get It Now <span>→</span></button>
                                 </div>
                             </div>
@@ -599,9 +599,48 @@
                             <div class="solution-content">
                                 <span class="solution-tag">SEN SOLUTION</span>
                                 <h3>Independent Therapy Audit — Tier 3</h3>
-                                <p>An independent audit of whether a child's current therapy is genuinely working — Tier 3 scope.</p>
+                                <p>An independent audit of whether a child's current therapy is genuinely working — Tier 3 scope (Full audit, therapist engagement and a 6-week re-check).</p>
+                                <div class="solution-footer">
+                                    <strong>₦180,000</strong>
+                                    <button class="solution-btn" type="button">Get It Now <span>→</span></button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="solution-card">
+                            <div class="solution-number">09</div>
+                            <div class="solution-content">
+                                <span class="solution-tag">SEN SOLUTION</span>
+                                <h3>Comprehensive SEN Screening Inventory</h3>
+                                <p>A structured developmental screen across all twelve areas of special educational need, for children ages 4 to 12.</p>
                                 <div class="solution-footer">
                                     <strong>₦XX,XXX</strong>
+                                    <button class="solution-btn" type="button">Get It Now <span>→</span></button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="solution-card">
+                            <div class="solution-number">10</div>
+                            <div class="solution-content">
+                                <span class="solution-tag">SEN SOLUTION</span>
+                                <h3>SmartPrep Weekend Check-In & Monitoring Tool</h3>
+                                <p>A weekly roster that tracks every enrolled learner's progress so no one gets dropped — one sweep, every Saturday.</p>
+                                <div class="solution-footer">
+                                    <strong>₦XX,XXX</strong>
+                                    <button class="solution-btn" type="button">Get It Now <span>→</span></button>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="solution-card">
+                            <div class="solution-number">11</div>
+                            <div class="solution-content">
+                                <span class="solution-tag">FREE TOOL</span>
+                                <h3>The Therapy Check</h3>
+                                <p>A free 2-minute, 10-question check for parents to see whether the therapy they're paying for is actually working.</p>
+                                <div class="solution-footer">
+                                    <strong>Free</strong>
                                     <button class="solution-btn" type="button">Get It Now <span>→</span></button>
                                 </div>
                             </div>
@@ -697,6 +736,9 @@
                                 <option value="acceptance-model">Zero Classroom Inclusion Setup (SmartPrep ACCEPTANCE Model)</option>
                                 <option value="independence-framework">SmartPrep Therapy-to-Independence Framework</option>
                                 <option value="shadow-placement">SmartPrep Shadow Support Placement Solution</option>
+                                <option value="screening-inventory">Comprehensive SEN Screening Inventory</option>
+                                <option value="checkin-tool">SmartPrep Weekend Check-In & Monitoring Tool</option>
+                                <option value="therapy-check">The Therapy Check (Free)</option>
                             </select>
                         </div>
 
@@ -747,10 +789,28 @@
                         </div>
                     </div>
 
-                    <a class="btn btn-secondary access-btn" href="#register">
-                        Access My Solution
-                        <span>→</span>
-                    </a>
+                    <div class="login-box">
+                        <div class="form-field" id="loginEmailStep">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" autocomplete="email" placeholder="you@example.com">
+                            <button class="btn btn-secondary access-btn" id="sendCodeBtn" type="button">
+                                Send Me A Code
+                                <span>→</span>
+                            </button>
+                        </div>
+
+                        <div class="form-field hidden" id="loginOtpStep">
+                            <label for="loginOtp">One-time code</label>
+                            <input type="text" id="loginOtp" inputmode="numeric" placeholder="6-digit code">
+                            <button class="btn btn-secondary access-btn" id="verifyCodeBtn" type="button">
+                                Verify &amp; Log In
+                                <span>→</span>
+                            </button>
+                        </div>
+
+                        <p class="form-status" id="loginStatus" role="status"></p>
+                        <p class="form-status hidden" id="accessResult" role="status"></p>
+                    </div>
 
                     <p class="access-note">
                         Paid by bank transfer instead? Message us your proof of payment and
@@ -772,8 +832,8 @@
                     </div>
                     <h2>Trusted by people who <span>care deeply.</span></h2>
                     <p>
-                        Replace these sample reviews with verified testimonials from parents,
-                        educators, schools and partner organisations before launch.
+                        Real feedback from teachers, facilitators and participants across
+                        our SEN training programmes.
                     </p>
                 </div>
 
@@ -781,14 +841,14 @@
                     <article class="testimonial-card reveal">
                         <div class="quote-mark">“</div>
                         <p>
-                            For the first time, our teachers knew exactly what to do with
-                            the children who were slipping through the cracks.
+                            The session really broadened my understanding of what I didn't
+                            understand — it's quite impactful.
                         </p>
                         <div class="reviewer">
-                            <div class="reviewer-avatar">HT</div>
+                            <div class="reviewer-avatar">T</div>
                             <div>
-                                <strong>Head Teacher</strong>
-                                <small>School, City</small>
+                                <strong>Teacher</strong>
+                                <small>SEN Masterclass Participant</small>
                             </div>
                         </div>
                     </article>
@@ -796,14 +856,15 @@
                     <article class="testimonial-card testimonial-featured reveal reveal-delay">
                         <div class="quote-mark">“</div>
                         <p>
-                            The audit gave us the truth. No sugar-coating. That is what
-                            we paid for.
+                            Thank you so much for being a man of your word — that's why I
+                            keep introducing people to this programme. I already have 5
+                            people enrolled in this certificate course.
                         </p>
                         <div class="reviewer">
-                            <div class="reviewer-avatar">SP</div>
+                            <div class="reviewer-avatar">PP</div>
                             <div>
-                                <strong>School Proprietor</strong>
-                                <small>City</small>
+                                <strong>Programme Participant</strong>
+                                <small>Certificate Course</small>
                             </div>
                         </div>
                     </article>
@@ -811,14 +872,14 @@
                     <article class="testimonial-card reveal">
                         <div class="quote-mark">“</div>
                         <p>
-                            As a parent, I finally understood what my child's therapy
-                            was actually achieving.
+                            The values shared are really more than the fee. It's practical
+                            and life changing.
                         </p>
                         <div class="reviewer">
-                            <div class="reviewer-avatar">P</div>
+                            <div class="reviewer-avatar">A</div>
                             <div>
-                                <strong>Parent</strong>
-                                <small>City</small>
+                                <strong>Ara</strong>
+                                <small>Course Participant</small>
                             </div>
                         </div>
                     </article>
@@ -909,6 +970,9 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+    <script src="supabase-config.js"></script>
+    <script src="auth.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
