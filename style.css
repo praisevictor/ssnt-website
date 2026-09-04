@@ -969,7 +969,7 @@ img {
 /* =========================
    7B. VISION 2030
 ========================== */
-.vision2030 {
+/* .vision2030 {
     background: var(--surface);
 }
 
@@ -1032,7 +1032,7 @@ img {
 
 .vision-list-item-total .vision-list-copy p {
     color: rgba(255, 255, 255, 0.78);
-}
+} */
 
 /* =========================
    8. SEN MODEL
@@ -1398,7 +1398,218 @@ img {
 .solutions-grid.expanded + .see-less-wrap {
     display: flex;
 }
+/* =========================
+   GET IT NOW MODAL
+========================= */
 
+.solution-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.solution-modal.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.solution-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 12, 25, 0.72);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.solution-modal-box {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 560px;
+
+    background: #ffffff;
+    color: #111827;
+
+    border-radius: 24px;
+    padding: 40px;
+
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+
+    transform: translateY(30px) scale(0.95);
+    transition: 0.35s ease;
+}
+
+.solution-modal.active .solution-modal-box {
+    transform: translateY(0) scale(1);
+}
+
+.solution-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 18px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f1f5f9;
+    color: #111827;
+
+    font-size: 26px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.25s ease;
+}
+
+.solution-modal-close:hover {
+    background: #e2e8f0;
+    transform: rotate(90deg);
+}
+
+.solution-modal-label {
+    display: inline-block;
+
+    margin-bottom: 14px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    color: #2563eb;
+}
+
+.solution-modal-box h2 {
+    margin-bottom: 15px;
+
+    font-size: clamp(25px, 4vw, 34px);
+    line-height: 1.15;
+}
+
+.solution-modal-box p {
+    margin-bottom: 25px;
+
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.solution-modal-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 25px;
+    padding: 18px 20px;
+
+    background: #f8fafc;
+    border-radius: 16px;
+}
+
+.solution-modal-price span {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.solution-modal-price strong {
+    font-size: 21px;
+    color: #111827;
+}
+
+.modal-continue-btn {
+    width: 100%;
+
+    border: none;
+    border-radius: 14px;
+
+    padding: 17px 22px;
+
+    background: #2563eb;
+    color: white;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+
+    transition: 0.25s ease;
+}
+
+.modal-continue-btn:hover {
+    transform: translateY(-2px);
+    background: #1d4ed8;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+/* DARK MODE SUPPORT */
+
+body.dark-mode .solution-modal-box {
+    background: #111827;
+    color: #ffffff;
+}
+
+body.dark-mode .solution-modal-box p {
+    color: #cbd5e1;
+}
+
+body.dark-mode .solution-modal-price {
+    background: #1e293b;
+}
+
+body.dark-mode .solution-modal-price strong {
+    color: #ffffff;
+}
+
+body.dark-mode .solution-modal-close {
+    background: #1e293b;
+    color: #ffffff;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .solution-modal {
+        padding: 14px;
+    }
+
+    .solution-modal-box {
+        padding: 32px 22px 24px;
+        border-radius: 20px;
+    }
+
+    .solution-modal-box h2 {
+        padding-right: 35px;
+    }
+}
 /* =========================
    9B. REGISTER / ACCESS
 ========================== */

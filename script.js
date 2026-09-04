@@ -242,3 +242,100 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener("click", (event) => event.preventDefault());
     });
 });
+/* =========================
+   GET IT NOW MODAL
+========================= */
+
+const solutionButtons = document.querySelectorAll(".solution-btn");
+
+const solutionModal = document.getElementById("solutionModal");
+const solutionModalOverlay = document.getElementById("solutionModalOverlay");
+const solutionModalClose = document.getElementById("solutionModalClose");
+
+const modalSolutionTitle = document.getElementById("modalSolutionTitle");
+const modalSolutionDescription = document.getElementById("modalSolutionDescription");
+const modalSolutionPrice = document.getElementById("modalSolutionPrice");
+
+const modalContinueBtn = document.getElementById("modalContinueBtn");
+
+let selectedSolution = "";
+
+solutionButtons.forEach((button) => {
+
+    button.addEventListener("click", () => {
+
+        const card = button.closest(".solution-card");
+
+        const title = card.querySelector("h3").textContent;
+        const description = card.querySelector("p").textContent;
+        const price = card.querySelector(".solution-footer strong").textContent;
+
+        selectedSolution = title;
+
+        modalSolutionTitle.textContent = title;
+        modalSolutionDescription.textContent = description;
+        modalSolutionPrice.textContent = price;
+
+        solutionModal.classList.add("active");
+        document.body.classList.add("modal-open");
+    });
+
+});
+
+
+function closeSolutionModal() {
+    solutionModal.classList.remove("active");
+    document.body.classList.remove("modal-open");
+}
+
+
+solutionModalClose.addEventListener("click", closeSolutionModal);
+
+solutionModalOverlay.addEventListener("click", closeSolutionModal);
+
+
+document.addEventListener("keydown", (event) => {
+
+    if (event.key === "Escape") {
+        closeSolutionModal();
+    }
+
+});
+
+
+modalContinueBtn.addEventListener("click", () => {
+
+    closeSolutionModal();
+
+    const registerSection = document.getElementById("register");
+    const solutionSelect = document.getElementById("regSolution");
+
+    if (solutionSelect) {
+
+        const options = Array.from(solutionSelect.options);
+
+        const matchedOption = options.find((option) =>
+            option.textContent.trim() === selectedSolution.trim()
+        );
+
+        if (matchedOption) {
+            solutionSelect.value = matchedOption.value;
+
+            solutionSelect.dispatchEvent(
+                new Event("change", {
+                    bubbles: true
+                })
+            );
+        }
+    }
+
+    if (registerSection) {
+
+        registerSection.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
+    }
+
+});
